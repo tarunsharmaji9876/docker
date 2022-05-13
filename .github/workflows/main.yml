@@ -29,6 +29,6 @@ jobs:
       - name: Scripts
         run: |
           docker build -t app .
-          docker login -u tarunsharma9876 -p 6cf2e333-2530-4272-86d0-e122f957963a
+          docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_SECRET}}
           docker tag app tarunsharma9876/test-repository
           docker push tarunsharma9876/test-repository
